@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+
+        /* Nesne(Object) Tanımlama */
+        const personel={
+            KullaniciAdi:"admin",
+            Sifre:"123",
+            Url:"https://www.meb.gov.tr"
+        };
+       
+       function Kontrol(){
+           let KullaniciAdi = document.getElementById("kullanici_adi").value;
+           let Sifre = document.getElementById("kullanici_adi").value;
+           console.log(KullaniciAdi + " " + Sifre);
+       }
+    </script>
+</head>
+<body>
+    
+    
+    <form>
+        Kullanıcı Adı <input type="text" id="kullanici_adi" /><br/>
+        Şifre <input type="password" id="sifre" /><br/>
+        <input type="button" value="Gönder" onclick="Kontrol()" />
+    </form>
+    
+</body>
+</html>
