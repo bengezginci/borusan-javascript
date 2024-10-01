@@ -11,9 +11,16 @@
         };
        
        function Kontrol(){
-           let KullaniciAdi = document.getElementById("kullanici_adi").value;
-           let Sifre = document.getElementById("kullanici_adi").value;
-           console.log(KullaniciAdi + " " + Sifre);
+           let GirilenKullaniciAdi = document.getElementById("KullaniciAdi").value; //formdan okunan
+           let GirilenSifre = document.getElementById("Sifre").value; //formdan okunan
+           //console.log(KullaniciAdi + " " + Sifre);
+           
+           if(GirilenKullaniciAdi==personel.KullaniciAdi && GirilenSifre==personel.Sifre){
+           		window.location = personel.Url;
+           }
+           else {
+           		alert("Giriş yetkiniz yok");
+           }
        }
     </script>
 </head>
@@ -21,8 +28,8 @@
     
     
     <form>
-        Kullanıcı Adı <input type="text" id="kullanici_adi" /><br/>
-        Şifre <input type="password" id="sifre" /><br/>
+        Kullanıcı Adı <input type="text" id="KullaniciAdi" /><br/>
+        Şifre <input type="password" id="Sifre" /><br/>
         <input type="button" value="Gönder" onclick="Kontrol()" />
     </form>
     
