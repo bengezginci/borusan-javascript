@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="text" id="Girilen">
+<input type="button" id="Kontrol" value="Kontrol" onclick="KontrolEt()">
+
+<p id="Sonuc"></p>
+
+<script>
+
+let RastGeleSayi = parseInt(Math.random(100)*100); //rastgele sayı tutuluyor
+
+document.getElementById("Sonuc").innerHTML = RastGeleSayi; //makinenin tutuğu sayıyı görmek için
+
+/*document.getElementById("Kontrol").click=function(){ //boylede yazılbilir
+}
+document.getElementById("Kontrol").click=KontrolEt(); //boylede yazılbilir
+*/
+
+function KontrolEt(){
+
+	let GirilenSayi = document.getElementById("Girilen").value;
+    
+    if(GirilenSayi==RastGeleSayi){
+    	alert("aferin");
+    }
+    else if(GirilenSayi>RastGeleSayi){
+    	alert("sayı daha küçük");
+    }
+    else {
+    		alert("sayı daha büyük");
+    }
+
+}
+</script>
+
+</body>
+</html>
