@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id = "not1" type = "text">
+    <input id = "not2" type = "text">
+    <input id = "not3" type = "text">
+    <button id = "ort">Ortalama</button>
+</body>
+<script>
+    document.getElementById("ort").onclick = function(){
+        let sinavnotu1 = document.getElementById("not1").value;
+        let sinavnotu2 = document.getElementById("not2").value;
+        let sinavnotu3 = document.getElementById("not3").value;
+        let sonuc = (Number(sinavnotu1) + Number(sinavnotu2) + Number(sinavnotu3)) / 3;
+        alert(parseInt(sonuc));
+    };
+</script>
+</html>
