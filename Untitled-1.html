@@ -1,0 +1,38 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id = "sayi1" type = "text">
+    <input id = "sayi2" type = "text">
+    <button id = "hesapla">Hesapla</button>
+    <p id="yazi"></p>
+</body>
+<script>
+    /*
+    let sayi1 = prompt("birinci sayiyi giriniz: ");
+    let sayi2 = prompt("ikinci sayiyi giriniz");
+    let sonuc = 0;
+    if (sayi1 > sayi2) {
+        sonuc = sayi1 - sayi2;
+    } else {
+        sonuc = sayi2 - sayi1;
+    }
+    alert(sonuc);
+    */
+   document.getElementById("hesapla").onclick = function(){
+    let sayi1 = document.getElementById("sayi1").value;
+    let sayi2 = document.getElementById("sayi2").value;
+    let sonuc = sayi1 - sayi2;
+    if(sonuc < 0){
+        sonuc *= -1;
+    }
+    document.getElementById("yazi").innerHTML = sonuc;
+   };
+</script>
+
+</html>
