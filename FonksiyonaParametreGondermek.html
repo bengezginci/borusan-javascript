@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <body>
 <h1>JavaScript Functions</h1>
@@ -16,7 +17,7 @@
   return p1 * p2;
 }
 
-let result = myFunction(4,6,8); */
+let result = myFunction(4,6,8); 
 
 //OBJE DEĞER GÖNDERİM
 function myFunction(GelenNesne) {
@@ -26,9 +27,18 @@ function myFunction(GelenNesne) {
 
 const Nesne = {p3:8, p2:6, p1:4};
 let result = myFunction(Nesne); //parametrelerin nesne olarak gönderilmesi
+*/
 
-document.getElementById("demo").innerHTML = result;
+//OBJE DEĞER GERIDONUS
+function myFunction(GelenNesne) {
+
+  return {x3:GelenNesne.p3*2, x2:GelenNesne.p2*2, x1:GelenNesne.p1*2};
+}
+
+const Nesne = {p3:8, p2:6, p1:4};//Gonderilen nesne
+let result = myFunction(Nesne); //fonksiyon ve geri donen nesne
+
+document.getElementById("demo").innerHTML = result.x3 + ' ' + result.x2 + ' ' + result.x1;
 </script>
 
 </body>
-</html>
