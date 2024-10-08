@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Object Constructors</h1>
+
+<p id="Babam"></p>
+<p id="Annem"></p>
+<p id="Kardesim"></p>
+
+<script>
+
+// KisiBilgileri Object / Nesne Oluşturucu Fonksiyon
+function KisiBilgileri(Adi, Soyadi, Yasi, GozRengi) {
+  this.Ad = Adi;
+  this.Soyad = Soyadi;
+  this.Yas = Yasi;
+  this.Goz = GozRengi;
+}
+
+// KisiBilgileri Nesnesi
+const Babam = new KisiBilgileri("Hilmi", "Dulkadir", 70, "kahverengi");
+const Annem = new KisiBilgileri("Leyla", Babam.Soyad, 68, "kahverengi");
+const Kardesim = new KisiBilgileri("Mert", Babam.Soyad, 28, "kahverengi");
+
+// Gösterim
+document.getElementById("Babam").innerHTML = "Babam " + Object.values(Babam); 
+document.getElementById("Annem").innerHTML = "Annem " + JSON.stringify(Annem); 
+document.getElementById("Kardesim").innerHTML = "Kardesim " + Object.values(Kardesim);
+</script>
+
+</body>
+</html>
