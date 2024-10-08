@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<script>
+// Adres Object
+//function Adres(Ilce, Mahalle, Sokak, Bina, Daire, Sahibi){
+function Adres(VeriObjesi){  //Object Constructors
+
+  this.ILCE = VeriObjesi.ILce;
+  this.MAHALLE = VeriObjesi.MAhalle;
+  this.SOKAK = VeriObjesi.SOkak;
+  this.BINA = VeriObjesi.BIna;
+  this.DAIRE = VeriObjesi.DAire;
+  this.SAHIBI = VeriObjesi.SAhibi || "Aykut"; //Sahibi degeri gelmezse SAHIBI Aykut olsun
+  this.ULKE = "Türkiye"
+  
+  this.ADRES = function() { // Object Constructors
+  	B=" ";
+  	return this.SAHIBI + B + 
+           this.MAHALLE + B +
+           this.SOKAK + B +
+           this.BINA + B + 
+           this.DAIRE + B +
+           this.ILCE + B +
+           this.ULKE
+  }
+};
+
+Veriler = {
+	ILce : 'Beylikdüzü',
+    MAhalle : 'Yıldız',
+    SOkak : 'Gümüş',
+    BIna : 'Mavi Kent',
+    DAire : 13,
+    SAhibi : 'Mehmet'
+}
+
+BirininAdresi = new Adres(Veriler);
+
+alert(BirininAdresi.SAHIBI);
+
+BirininAdresi.IL = "İstanbul"; //IL Elemanı Objeye Eklendi.
+
+alert(BirininAdresi.IL);
+alert(BirininAdresi.ADRES());
+
+BirininAdresi.KISAADRES = function () { //KISAADRES Fonksiyonu Object'e eklendi
+	return this.ULKE + '/' + this.IL + '/' + this.ILCE;
+}
+
+alert(BirininAdresi.KISAADRES());
+
+</script>
+</body>
+</html>
