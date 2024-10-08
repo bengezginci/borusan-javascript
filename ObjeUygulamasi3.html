@@ -15,12 +15,25 @@ function KisiBilgileri(Adi, Soyadi, Yasi, GozRengi) {
   this.Soyad = Soyadi;
   this.Yas = Yasi;
   this.Goz = GozRengi;
+  this.Memleket = "Malatya"; //Deger olarak gelmeyen ama nesne elemanı (this yüzünden) olarak tanımlanan
 }
+
+//KisiBilgileri.Meslek = "İşçi"; //Bu şekilde nesne oluşturan fonksiyona eleman eklenemez.
+//KisiBilgileri.prototype.Meslek = "İşçi"; 
+
 
 // KisiBilgileri Nesnesi
 const Babam = new KisiBilgileri("Hilmi", "Dulkadir", 70, "kahverengi");
 const Annem = new KisiBilgileri("Leyla", Babam.Soyad, 68, "kahverengi");
 const Kardesim = new KisiBilgileri("Mert", Babam.Soyad, 28, "kahverengi");
+
+Kardesim.Boy = "1.80"; //Kardesim Nesne olduğu için Boy eklenebilir. 
+
+// Babam Objesine YasDegistir Metotu Ekliyoruz
+Babam.YasDegistir = function(YeniYas) { 
+	this.Yas = YeniYas;
+}
+Babam.YasDegistir(80);  //alert(Babam.Yas);
 
 // Gösterim
 document.getElementById("Babam").innerHTML = "Babam " + Object.values(Babam); 
