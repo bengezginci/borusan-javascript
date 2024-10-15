@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        body {
+            background-image: url('https://cdn.pixabay.com/photo/2012/11/28/10/16/stars-67616_960_720.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #UGemi {
+            position: absolute;
+        }
+    </style>
+    
+    <script>
+        
+        var Adim = 10;
+        var y=0, x =0;
+        
+        function TusaBasildi(event) {
+            BasilanTusNo = event.keyCode;
+            //alert(BasilanTusNo); //basılan tusun nosu
+            
+            switch(BasilanTusNo) {
+                case 38 :  y-=Adim; break; //yukarı tus
+                case 40 :  y+=Adim; break; //asagi tus
+                case 37 :  x-=Adim; break; //sol tus
+                case 39 :  x+=Adim; break; //sag tus
+            }
+            //console.log(x);
+            document.getElementById('UGemi').style.top = y + 'px';
+            document.getElementById('UGemi').style.left = x + 'px';
+        }
+    </script>
+    
+</head>
+<body onkeydown="TusaBasildi(event)">
+
+    <img src="resimler/rocket.gif" id="UGemi" />
+    
+</body>
+</html>
